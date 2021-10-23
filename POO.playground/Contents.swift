@@ -1,8 +1,5 @@
 import UIKit
 
-var greeting = "Hello, playground"
-
-
 //Declarar on objeto o declarar una clase
 
 class Automovil {
@@ -46,6 +43,13 @@ class Automovil {
 
 let jetta: Automovil = Automovil(puertas: 4, motor: "2.0", color: UIColor.black, marca: "VW")
 
+let vento = jetta
+vento.puertas = 2
+
+print("Jetta puertas: \(jetta.puertas)")
+
+
+
 print(jetta)
 dump(jetta)
 
@@ -57,19 +61,18 @@ dump(audi3)
 
 audi3.acelerar(velocidad: 0)
 
-let strNombre = String(describing: "Hola")
 
+let strNombre = String(describing: "Hola")
 print(strNombre.count)
 
 let strApellido = "Mundo"
 
-
 struct Person {
     
-    let name: String
-    let lastName: String
-    let gender: String
-    let age: Int
+    var name: String
+    var lastName: String
+    var gender: String
+    var age: Int
     
     func obtenEdad() -> String {
         return "la edad es de: \(age)"
@@ -80,6 +83,28 @@ struct Person {
 let miPersona: Person = Person(name: "Israel", lastName: "Torres", gender: "M", age: 25)
 dump(miPersona)
 
+var miPersonaDos = miPersona
+
+miPersonaDos.age = 30
+
 let mensajeEdad = miPersona.obtenEdad()
 
 print(mensajeEdad)
+
+/*
+ 
+Tipos por Referencia
+ 
+class
+ 
+Tipos por Valor
+
+Int, Double, Float, Bool, String
+ 
+struct
+
+Array
+Dictionary
+enum
+tuple
+*/
