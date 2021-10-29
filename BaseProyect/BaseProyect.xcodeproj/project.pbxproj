@@ -13,6 +13,8 @@
 		775306672723962700097ACD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 775306652723962700097ACD /* Main.storyboard */; };
 		775306692723962C00097ACD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 775306682723962C00097ACD /* Assets.xcassets */; };
 		7753066C2723962C00097ACD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7753066A2723962C00097ACD /* LaunchScreen.storyboard */; };
+		77F495F32727888F007F6099 /* remachine.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 77F495F2272784CA007F6099 /* remachine.ttf */; };
+		77F495F527278C2A007F6099 /* drift.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 77F495F427278C2A007F6099 /* drift.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		775306682723962C00097ACD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7753066B2723962C00097ACD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7753066D2723962C00097ACD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		77F495F2272784CA007F6099 /* remachine.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = remachine.ttf; sourceTree = "<group>"; };
+		77F495F427278C2A007F6099 /* drift.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = drift.ttf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +60,7 @@
 		7753065E2723962700097ACD /* BaseProyect */ = {
 			isa = PBXGroup;
 			children = (
+				77F495F127278490007F6099 /* fonts */,
 				7753065F2723962700097ACD /* AppDelegate.swift */,
 				775306612723962700097ACD /* SceneDelegate.swift */,
 				775306632723962700097ACD /* ViewController.swift */,
@@ -65,6 +70,15 @@
 				7753066D2723962C00097ACD /* Info.plist */,
 			);
 			path = BaseProyect;
+			sourceTree = "<group>";
+		};
+		77F495F127278490007F6099 /* fonts */ = {
+			isa = PBXGroup;
+			children = (
+				77F495F427278C2A007F6099 /* drift.ttf */,
+				77F495F2272784CA007F6099 /* remachine.ttf */,
+			);
+			path = fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -125,6 +139,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				77F495F32727888F007F6099 /* remachine.ttf in Resources */,
+				77F495F527278C2A007F6099 /* drift.ttf in Resources */,
 				7753066C2723962C00097ACD /* LaunchScreen.storyboard in Resources */,
 				775306692723962C00097ACD /* Assets.xcassets in Resources */,
 				775306672723962700097ACD /* Main.storyboard in Resources */,
