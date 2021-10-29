@@ -1,8 +1,8 @@
 //
 //  SceneDelegate.swift
-//  HelloWord
+//  BaseProject
 //
-//  Created by Isrrael Torres Alvarado on 18/10/21.
+//  Created by Rom Vargas on 22/10/21.
 //
 
 import UIKit
