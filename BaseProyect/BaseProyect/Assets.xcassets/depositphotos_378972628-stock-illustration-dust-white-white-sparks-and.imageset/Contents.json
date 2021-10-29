@@ -1,0 +1,21 @@
+{
+  "images" : [
+    {
+      "filename" : "depositphotos_378972628-stock-illustration-dust-white-white-sparks-and.jpeg",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

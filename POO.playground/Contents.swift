@@ -50,10 +50,11 @@ audi3.acelerar(velocidad: 0)
 
 let strNombre = String(describing: "Hola")
 print(strNombre.count)
-print(<#T##items: Any...##Any#>)
-let strApellido = Mundo
 
-struct person{
+let strApellido = String(describing: "Mundo")
+print(strApellido.count)
+
+struct Person{
     let name: String
     let lastName: String
     let gender: String
@@ -61,6 +62,28 @@ struct person{
     
     func obtenEdad() -> String{
         return "la edad es de: \(age)"
-    
     }
 }
+
+let miPersona : Person = Person(name: "Esmeralda", lastName: "Jiménez", gender: "Female", age: 31)
+dump(miPersona)
+
+let mensajeEdad = miPersona.obtenEdad()
+print(mensajeEdad)
+
+/*
+ Tipos por referencia
+ Class
+ 
+ Tipos por valor
+ Int Double Float Bool String
+ 
+ Struct
+ 
+ array
+ dictionary+
+ enum
+ tuple
+ */
+
+
