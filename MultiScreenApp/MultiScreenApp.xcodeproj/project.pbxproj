@@ -18,6 +18,7 @@
 		77C3B58527361FB6008F1786 /* RecoveryPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C3B58427361FB6008F1786 /* RecoveryPasswordViewController.swift */; };
 		77C3B58727361FCA008F1786 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C3B58627361FC9008F1786 /* HomeViewController.swift */; };
 		77C3B58927361FE0008F1786 /* FavouritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C3B58827361FE0008F1786 /* FavouritesViewController.swift */; };
+		77CDBBFE273B639A005C6DE8 /* PersistenceClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77CDBBFD273B639A005C6DE8 /* PersistenceClient.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		77C3B58427361FB6008F1786 /* RecoveryPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecoveryPasswordViewController.swift; sourceTree = "<group>"; };
 		77C3B58627361FC9008F1786 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		77C3B58827361FE0008F1786 /* FavouritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesViewController.swift; sourceTree = "<group>"; };
+		77CDBBFD273B639A005C6DE8 /* PersistenceClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceClient.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 		773D46672734C07100B4B652 /* MultiScreenApp */ = {
 			isa = PBXGroup;
 			children = (
+				77CDBBF9273B6245005C6DE8 /* Model */,
 				77C3B57F27361EE9008F1786 /* Controllers */,
 				773D46682734C07100B4B652 /* AppDelegate.swift */,
 				773D466A2734C07100B4B652 /* SceneDelegate.swift */,
@@ -88,6 +91,30 @@
 				77C3B58827361FE0008F1786 /* FavouritesViewController.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		77CDBBF9273B6245005C6DE8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				77CDBBFC273B6364005C6DE8 /* ServiceClient */,
+				77CDBBFB273B6351005C6DE8 /* PersistenceClient */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		77CDBBFB273B6351005C6DE8 /* PersistenceClient */ = {
+			isa = PBXGroup;
+			children = (
+				77CDBBFD273B639A005C6DE8 /* PersistenceClient.swift */,
+			);
+			path = PersistenceClient;
+			sourceTree = "<group>";
+		};
+		77CDBBFC273B6364005C6DE8 /* ServiceClient */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ServiceClient;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -162,6 +189,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				77C3B58927361FE0008F1786 /* FavouritesViewController.swift in Sources */,
+				77CDBBFE273B639A005C6DE8 /* PersistenceClient.swift in Sources */,
 				773D466D2734C07100B4B652 /* OnboardingViewController.swift in Sources */,
 				773D46692734C07100B4B652 /* AppDelegate.swift in Sources */,
 				77C3B58127361F64008F1786 /* SignUpViewController.swift in Sources */,
