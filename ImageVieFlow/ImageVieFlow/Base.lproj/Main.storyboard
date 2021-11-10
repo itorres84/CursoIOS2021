@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ImageVieFlow" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="girasol" translatesAutoresizingMaskIntoConstraints="NO" id="wdI-An-Zr0">
+                                <rect key="frame" x="87" y="328" width="240" height="240"/>
+                                <color key="backgroundColor" systemColor="systemYellowColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="NaL-m0-Nxx"/>
+                                    <constraint firstAttribute="height" constant="240" id="m06-TN-fM7"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JwE-hG-1QY">
+                                <rect key="frame" x="20" y="44" width="374" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="ZKh-6B-UZH"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Registrarse"/>
+                                <connections>
+                                    <segue destination="eor-50-ZVq" kind="presentation" id="9NX-jh-X7b"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="JwE-hG-1QY" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="2bv-Vr-42H"/>
+                            <constraint firstItem="wdI-An-Zr0" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Z1a-y6-ll1"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="JwE-hG-1QY" secondAttribute="trailing" constant="20" id="dqa-4S-43k"/>
+                            <constraint firstItem="JwE-hG-1QY" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="iCc-kY-wZ1"/>
+                            <constraint firstItem="wdI-An-Zr0" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="jO2-Pz-Re1"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="imageflower" destination="wdI-An-Zr0" id="JGW-8R-vSS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="18.840579710144929" y="79.6875"/>
+        </scene>
+        <!--Sign Up View Controller-->
+        <scene sceneID="FOj-Rd-0VA">
+            <objects>
+                <viewController id="eor-50-ZVq" customClass="SignUpViewController" customModule="ImageVieFlow" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="qnp-Yt-GA4">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="n9a-tc-TFL" customClass="UITextFieldCustom" customModule="ImageVieFlow" customModuleProvider="target">
+                                <rect key="frame" x="20" y="40" width="374" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="3Fh-ki-ovb"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="9FT-9Y-hL6"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="txtEmail:" destination="eor-50-ZVq" eventType="editingDidEnd" id="Obv-KZ-6TQ"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Teléfono" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ulc-2T-iSs" customClass="UITextFieldCustom" customModule="ImageVieFlow" customModuleProvider="target">
+                                <rect key="frame" x="20" y="110" width="374" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="DvS-ZT-ddp"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Contraseña" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="56U-x7-4CN" customClass="UITextFieldCustom" customModule="ImageVieFlow" customModuleProvider="target">
+                                <rect key="frame" x="20" y="180" width="374" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="l72-5Q-O1T"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="qYj-RD-eFz"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="qYj-RD-eFz" firstAttribute="trailing" secondItem="n9a-tc-TFL" secondAttribute="trailing" constant="20" id="Hc7-nN-G4j"/>
+                            <constraint firstItem="n9a-tc-TFL" firstAttribute="top" secondItem="qYj-RD-eFz" secondAttribute="top" constant="40" id="aO6-xF-h3N"/>
+                            <constraint firstItem="ulc-2T-iSs" firstAttribute="top" secondItem="n9a-tc-TFL" secondAttribute="bottom" constant="30" id="b9v-Ej-hRU"/>
+                            <constraint firstItem="56U-x7-4CN" firstAttribute="top" secondItem="ulc-2T-iSs" secondAttribute="bottom" constant="30" id="fTy-QU-2Wd"/>
+                            <constraint firstItem="n9a-tc-TFL" firstAttribute="leading" secondItem="qYj-RD-eFz" secondAttribute="leading" constant="20" id="t1v-kn-1pL"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="txtEmail" destination="n9a-tc-TFL" id="dRz-sJ-DlT"/>
+                        <outlet property="txtPassword" destination="56U-x7-4CN" id="XvX-hA-e59"/>
+                        <outlet property="txtPhone" destination="ulc-2T-iSs" id="2FK-nR-54i"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oUC-EN-VLu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="757.97101449275374" y="79.6875"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="girasol" width="626" height="454"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
