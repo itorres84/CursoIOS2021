@@ -106,7 +106,7 @@
                                                                     <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 </buttonConfiguration>
                                                                 <connections>
-                                                                    <segue destination="DDi-rG-Eeo" kind="presentation" modalPresentationStyle="fullScreen" id="buk-k9-2TU"/>
+                                                                    <action selector="goToLogin:" destination="BYZ-38-t0r" eventType="touchUpInside" id="EWS-P3-bMH"/>
                                                                 </connections>
                                                             </button>
                                                         </subviews>
@@ -162,6 +162,8 @@
                     <connections>
                         <outlet property="pageControl" destination="fxN-mQ-eQ2" id="HtP-Tg-N9v"/>
                         <outlet property="scrollView" destination="XPP-Vx-fJa" id="cCe-tj-7ya"/>
+                        <segue destination="DDi-rG-Eeo" kind="presentation" identifier="goToLoginAnimated" modalPresentationStyle="fullScreen" id="Yh7-Rg-QN8"/>
+                        <segue destination="DDi-rG-Eeo" kind="presentation" identifier="goToLoginNotAnimated" animates="NO" modalPresentationStyle="fullScreen" id="Sye-3J-1Z0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -447,6 +449,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="Yh7-Rg-QN8"/>
         <segue reference="KDZ-zp-KEq"/>
     </inferredMetricsTieBreakers>
     <resources>

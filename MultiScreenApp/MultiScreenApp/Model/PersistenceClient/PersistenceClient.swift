@@ -39,5 +39,14 @@ class PersistenceClient {
     
     }
     
+    
+    func onboardingViewed(viewwed: Bool) {
+        UserDefaults.standard.set(viewwed, forKey: "onboardingViewed")
+    }
+    
+    func isOnboardingViewed() -> Bool {
+        return UserDefaults.standard.bool(forKey: "onboardingViewed")
+    }
+    
 }
 
