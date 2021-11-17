@@ -16,6 +16,7 @@
 		7720745D273E03D600175A3A /* ContactTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7720745C273E03D600175A3A /* ContactTableViewCell.swift */; };
 		778BFF71273F4BEF00BB47A3 /* AddContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 778BFF70273F4BEF00BB47A3 /* AddContactViewController.swift */; };
 		778BFF74273F622500BB47A3 /* ContactPersistenceClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 778BFF73273F622500BB47A3 /* ContactPersistenceClient.swift */; };
+		77CFFB21274491B400A38F5C /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77CFFB20274491B400A38F5C /* Contact.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		7720745C273E03D600175A3A /* ContactTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactTableViewCell.swift; sourceTree = "<group>"; };
 		778BFF70273F4BEF00BB47A3 /* AddContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddContactViewController.swift; sourceTree = "<group>"; };
 		778BFF73273F622500BB47A3 /* ContactPersistenceClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactPersistenceClient.swift; sourceTree = "<group>"; };
+		77CFFB20274491B400A38F5C /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,9 +81,18 @@
 		778BFF72273F61FC00BB47A3 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				77CFFB1F2744917600A38F5C /* Entities */,
 				778BFF73273F622500BB47A3 /* ContactPersistenceClient.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		77CFFB1F2744917600A38F5C /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				77CFFB20274491B400A38F5C /* Contact.swift */,
+			);
+			path = Entities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -161,6 +172,7 @@
 				778BFF74273F622500BB47A3 /* ContactPersistenceClient.swift in Sources */,
 				77207449273DF9FA00175A3A /* AppDelegate.swift in Sources */,
 				7720744B273DF9FA00175A3A /* SceneDelegate.swift in Sources */,
+				77CFFB21274491B400A38F5C /* Contact.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

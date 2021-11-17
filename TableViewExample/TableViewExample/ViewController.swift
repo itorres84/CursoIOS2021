@@ -10,12 +10,17 @@ import UIKit
 class ViewController: UIViewController {
 
     @IBOutlet weak var contactsTableView: UITableView!
+    @IBOutlet weak var searchBar: UISearchBar!
     
     //Data Source
-    var arrayContacts: [String] = []
+    var arrayContacts: [Contact] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        searchBar.delegate = self
+        
+        configureSearchBar()
         
         if let navigationController = self.navigationController {
             
@@ -31,7 +36,22 @@ class ViewController: UIViewController {
         }
         
     }
-
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        let persistenceClient = ContactPersistenceClientUserDefault()
+        arrayContacts = persistenceClient.getContacts()
+        contactsTableView.reloadData()
+        
+    }
+    
+    func configureSearchBar() {
+                
+        
+        
+    }
+    
 }
 
 //MARK: UITableViewDelegate
@@ -49,13 +69,25 @@ extension ViewController: UITableViewDataSource {
         
         print("Seccion: \(indexPath.section), Fila: \(indexPath.row)")
         
-        let name = arrayContacts[indexPath.row]
+        let contact = arrayContacts[indexPath.row]
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! ContactTableViewCell
-        cell.contact.text = name
+        cell.contact.text = contact.name
         return cell
     
     }
+    
+}
+//MARK: UISearchBarDelegate
+extension ViewController: UISearchBarDelegate {
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        
+        print(searchText)
+        
+        
+    }
+    
     
 }
 

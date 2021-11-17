@@ -20,11 +20,39 @@ class ContactPersistenceClientUserDefault: ContactPersistenceClient {
     }
     
     let userDefault = UserDefaults.standard
-    
+    let keyContactToSave = "contactsHistoryArray"
+
     //MARK: ContactPersistenceClient
     func saveContact(contact: RequestModel) -> Bool {
+        
+        var contacts = getContacts()
+        contacts.append(Contact(name: contact.name,
+                                lastName: contact.lastName,
+                                phone: contact.phone))
+        
+        do {
             
-        return true
+            let contactData = try JSONEncoder().encode(contacts)
+            userDefault.set(contactData, forKey: keyContactToSave)
+            
+            return true
+            
+        } catch {
+            
+            print(error.localizedDescription)
+            return false
+            
+        }
+        
+    }
+    
+    func getContacts() -> [Contact] {
+        
+        guard let data = userDefault.data(forKey: keyContactToSave),
+              let contacts = try? JSONDecoder().decode([Contact].self, from: data)  else { return [] }
+        
+        return contacts
+        
     }
     
 }
