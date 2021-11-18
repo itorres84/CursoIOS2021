@@ -7,23 +7,27 @@
 
 import UIKit
 
+// Enumeracion que me indica que tipo de campo de texto es para poder validarlo
 enum TypeValidationTextFields {
-    case texto
-    case email
-    case password
+    case texto //se valida el campo de nombre y apellidos
+    case email // se valida el corre electronico
+    case password // se valida la contraseña y comprobar contraseña
 }
 
 class SignUpViewController: UIViewController {
 
+    //Son propiedades que representan una caja de texto
     @IBOutlet weak var txtNombre: UITextField!
-    var nameIsValid: Bool = false
     @IBOutlet weak var txtLastName: UITextField!
-    var lastNameValid: Bool = false
     @IBOutlet weak var txtEmail: UITextField!
-    var emailValid: Bool = false
     @IBOutlet weak var txtPassword: UITextField!
-    var passwordValid: Bool = false
     @IBOutlet weak var txtConfirmPassword: UITextField!
+   
+    //Son propiedades que son auxiliares para validacion de las cajas de texto
+    var nameIsValid: Bool = false
+    var lastNameValid: Bool = false
+    var emailValid: Bool = false
+    var passwordValid: Bool = false
     var confirmPasswordValid: Bool = false
     
     override func viewDidLoad() {
@@ -35,15 +39,26 @@ class SignUpViewController: UIViewController {
         txtConfirmPassword.delegate = self
     }
     
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
+        
+        if let identifier = segue.identifier, identifier.elementsEqual("goToHome") {
+            
+            if let tabbar = segue.destination as? UITabBarController,
+               let homeViewController = tabbar.viewControllers?.first as? HomeViewController {
+                
+                if let name = sender as? String {
+                    homeViewController.name = name
+                }
+                
+            }
+        }
     }
-    */
     
     @IBAction func SignUpProcess(_ sender: Any) {
 
@@ -58,9 +73,22 @@ class SignUpViewController: UIViewController {
         
         if nameIsValid && lastNameValid && emailValid && passwordValid && confirmPasswordValid {
             
-            print("realizar proceso de registro")
+            let peristenceClient = PersistenceClient()
+            let saveSucces = peristenceClient.saveUserRegister(name: name,
+                                                               lastName: lastName,
+                                                               email: email,
+                                                               password: password)
             
+            if saveSucces {
+                
+                //Mandar llamar al segue 
+                performSegue(withIdentifier: "goToHome", sender: name)
+                
+            } else {
+                showAlert(message: "Ocurrio un error favor de intentarlo de nuevo", title: "Error")
+            }
             
+                    
         } else {
             showAlert(message: "los campos deben tener un formato valido", title: "Error")
         }
@@ -76,9 +104,21 @@ class SignUpViewController: UIViewController {
         
     }
     
+    
+    /*
+        
+     Parametros
+     text: Representa el texto que se quiere validar
+     type: Representa el tipo de validacion que se quiere realizar
+     
+     Return
+     Regresa true si es valido o regresa false si el compo no es valido
+     
+    */
     func valid(text: String, type: TypeValidationTextFields) -> Bool {
         
         var regex = ""
+        
         switch type {
         case .texto:
             regex = "^[A-Za-z-ñÑÁáÉéÍíÓóÚú ]{0,100}$"
@@ -93,9 +133,7 @@ class SignUpViewController: UIViewController {
         do {
                 
             let regExVal = try NSRegularExpression(pattern: regex, options: .caseInsensitive)
-            
             let matches = regExVal.numberOfMatches(in: text, options: [], range: NSRange(location: 0, length: text.count))
-            
             if matches > 0 {
                 return true
             } else {
@@ -173,8 +211,15 @@ extension SignUpViewController: UITextFieldDelegate {
             if let texto = textField.text, !texto.isEmpty { //Campo nombre, apellido
 
                 let isValid = valid(text: texto, type: .texto)
+                
                 if !isValid {
                     showAlert(message: "El campo de nombre contiene caracteres invalidos, favor de solo escribir letras", title: "Error")
+                    if textField == txtNombre {
+                        nameIsValid = false
+                    } else if textField == txtLastName {
+                        lastNameValid = false
+                    }
+                
                 } else {
                     
                     if textField == txtNombre {
@@ -195,6 +240,7 @@ extension SignUpViewController: UITextFieldDelegate {
                 
                 if !isValid {
                     showAlert(message: "El campo de email no tiene el formato", title: "Error")
+                    emailValid = false
                 } else {
                     emailValid = true
                 }
@@ -209,6 +255,12 @@ extension SignUpViewController: UITextFieldDelegate {
                 
                 if !isValid {
                     showAlert(message: "El campo de password no tiene el formato", title: "Error")
+                    if textField == txtPassword {
+                        passwordValid = false
+                    } else if textField == txtConfirmPassword {
+                        confirmPasswordValid = false
+                    }
+                    
                 } else {
                     
                     if textField == txtPassword {

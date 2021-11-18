@@ -106,7 +106,7 @@
                                                                     <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 </buttonConfiguration>
                                                                 <connections>
-                                                                    <segue destination="DDi-rG-Eeo" kind="presentation" modalPresentationStyle="fullScreen" id="buk-k9-2TU"/>
+                                                                    <action selector="goToLogin:" destination="BYZ-38-t0r" eventType="touchUpInside" id="EWS-P3-bMH"/>
                                                                 </connections>
                                                             </button>
                                                         </subviews>
@@ -162,6 +162,8 @@
                     <connections>
                         <outlet property="pageControl" destination="fxN-mQ-eQ2" id="HtP-Tg-N9v"/>
                         <outlet property="scrollView" destination="XPP-Vx-fJa" id="cCe-tj-7ya"/>
+                        <segue destination="DDi-rG-Eeo" kind="presentation" identifier="goToLoginAnimated" modalPresentationStyle="fullScreen" id="Yh7-Rg-QN8"/>
+                        <segue destination="DDi-rG-Eeo" kind="presentation" identifier="goToLoginNotAnimated" animates="NO" modalPresentationStyle="fullScreen" id="Sye-3J-1Z0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -233,7 +235,7 @@
                         <outlet property="txtLastName" destination="5LZ-kp-bLo" id="TyN-rn-Or5"/>
                         <outlet property="txtNombre" destination="1wd-eq-Sjo" id="KIQ-ov-noh"/>
                         <outlet property="txtPassword" destination="Quo-28-WfC" id="vcV-6w-0Nl"/>
-                        <segue destination="aj3-ff-Gn7" kind="presentation" modalPresentationStyle="fullScreen" id="jya-q1-fCg"/>
+                        <segue destination="aj3-ff-Gn7" kind="presentation" identifier="goToHome" modalPresentationStyle="fullScreen" id="jya-q1-fCg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="o0X-Aa-QOy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -322,7 +324,7 @@
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="filled" title="Iniciar sesion"/>
                                         <connections>
-                                            <segue destination="aj3-ff-Gn7" kind="presentation" modalPresentationStyle="fullScreen" id="Tcr-Xg-xzc"/>
+                                            <action selector="login:" destination="Tjh-7h-Aws" eventType="touchUpInside" id="1gB-uf-AZH"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gdm-lv-JLI">
@@ -348,6 +350,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Iniciar sesion" id="6nM-lJ-zf3"/>
+                    <connections>
+                        <outlet property="email" destination="1x5-Bh-862" id="I9e-3V-M4T"/>
+                        <outlet property="password" destination="7RC-pJ-8ft" id="Ge8-EA-dmg"/>
+                        <segue destination="aj3-ff-Gn7" kind="presentation" identifier="goToHome" modalPresentationStyle="fullScreen" id="KDZ-zp-KEq"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oKt-xN-8Re" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -376,14 +383,33 @@
                     <view key="view" contentMode="scaleToFill" id="oOx-9R-7S7">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bienvenido " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EPB-k3-R6D">
+                                <rect key="frame" x="20" y="44" width="374" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="QVH-Uo-LOt"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="yb3-lR-b5H"/>
                         <color key="backgroundColor" systemColor="systemGrayColor"/>
+                        <constraints>
+                            <constraint firstItem="EPB-k3-R6D" firstAttribute="top" secondItem="yb3-lR-b5H" secondAttribute="top" id="Ncu-a5-YSb"/>
+                            <constraint firstItem="yb3-lR-b5H" firstAttribute="trailing" secondItem="EPB-k3-R6D" secondAttribute="trailing" constant="20" id="goH-2d-sm0"/>
+                            <constraint firstItem="EPB-k3-R6D" firstAttribute="leading" secondItem="yb3-lR-b5H" secondAttribute="leading" constant="20" id="jYL-3T-zfi"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Home" image="house.fill" catalog="system" id="07I-Md-2pp"/>
+                    <connections>
+                        <outlet property="lblWelcome" destination="EPB-k3-R6D" id="ZXd-bg-ykm"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="B7j-wv-llY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3680" y="-269"/>
+            <point key="canvasLocation" x="3679.7101449275365" y="-269.19642857142856"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="w4V-xM-V9W">
@@ -423,7 +449,8 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="jya-q1-fCg"/>
+        <segue reference="Yh7-Rg-QN8"/>
+        <segue reference="KDZ-zp-KEq"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="favoritePin" width="512" height="512"/>

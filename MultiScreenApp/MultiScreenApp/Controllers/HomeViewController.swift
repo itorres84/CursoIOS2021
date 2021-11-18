@@ -9,10 +9,17 @@ import UIKit
 
 class HomeViewController: UIViewController {
 
+    @IBOutlet weak var lblWelcome: UILabel!
+    
+    var name: String = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        if !name.isEmpty {
+            lblWelcome.text = "Bienvenido \(name)"
+        }
+
     }
     
 
