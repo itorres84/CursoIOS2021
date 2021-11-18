@@ -12,15 +12,15 @@ class ViewController: UIViewController {
     @IBOutlet weak var contactsTableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
     
-    //Data Source
-    var arrayContacts: [Contact] = []
+    let persistenceClient = ContactPersistenceClientUserDefault()
     
+    //Data Source
+    var arrayContacts: [AlphabetContactViewModel] = []
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
         searchBar.delegate = self
-        
-        configureSearchBar()
         
         if let navigationController = self.navigationController {
             
@@ -39,16 +39,47 @@ class ViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
-        let persistenceClient = ContactPersistenceClientUserDefault()
-        arrayContacts = persistenceClient.getContacts()
+    
+        self.arrayContacts = prepareDataForTableView(contacts: persistenceClient.getContacts())
         contactsTableView.reloadData()
         
     }
     
-    func configureSearchBar() {
-                
+    func prepareDataForTableView(contacts: [Contact]) -> [AlphabetContactViewModel] {
+     
+        var alphabetContacts: [AlphabetContactViewModel] = []
         
+        let alphabet = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"]
+            
+        for letter in alphabet {
+            
+            var contactsWhitLetter: [Contact] = []
+            
+            for contact in contacts {
+             
+                if let firstLetter = contact.lastName.first {
+                    
+                    if firstLetter.uppercased().elementsEqual(letter) {
+                        contactsWhitLetter.append(contact)
+                    }
+                    
+                }
+        
+            }
+            
+            if !contactsWhitLetter.isEmpty {
+                
+                let alphabetContact = AlphabetContactViewModel(letter: letter, contacts: contactsWhitLetter)
+                
+                alphabetContacts.append(alphabetContact)
+                
+            }
+            
+        }
+        
+        
+        
+        return alphabetContacts
         
     }
     
@@ -56,35 +87,52 @@ class ViewController: UIViewController {
 
 //MARK: UITableViewDelegate
 extension ViewController: UITableViewDelegate {
+
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return arrayContacts[section].letter
+    }
     
 }
 //MARK: UITableViewDataSource
 extension ViewController: UITableViewDataSource {
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         return arrayContacts.count
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return arrayContacts[section].contacts.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        print("Seccion: \(indexPath.section), Fila: \(indexPath.row)")
-        
-        let contact = arrayContacts[indexPath.row]
+        let contactAlphabet = arrayContacts[indexPath.section]
+        let contact = contactAlphabet.contacts[indexPath.row]
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! ContactTableViewCell
-        cell.contact.text = contact.name
+        cell.contact.text = contact.name + " " + contact.lastName
         return cell
     
     }
     
 }
+
 //MARK: UISearchBarDelegate
 extension ViewController: UISearchBarDelegate {
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         
-        print(searchText)
-        
+//        arrayContacts = prepareDataForTableView(contacts: persistenceClient.getContacts())
+//
+//        guard !searchText.isEmpty else {
+//            contactsTableView.reloadData()
+//            return
+//        }
+//
+//        let filterContacts = arrayContacts.filter({  $0.name.lowercased().contains(searchText.lowercased()) })
+//
+//        arrayContacts = filterContacts
+//        contactsTableView.reloadData()
         
     }
     
