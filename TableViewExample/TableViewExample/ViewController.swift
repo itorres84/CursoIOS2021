@@ -92,6 +92,63 @@ extension ViewController: UITableViewDelegate {
         return arrayContacts[section].letter
     }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 200
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let contact = arrayContacts[indexPath.section].contacts[indexPath.row]
+        print(contact)
+        
+        let alertController = UIAlertController(title: "\(contact.name) \(contact.lastName)", message: "Numero de telefono: \(contact.phone)", preferredStyle: .actionSheet)
+        
+        let accionCall = UIAlertAction(title: "Llamar", style: .default) { _ in
+        
+            print("se lanza llamada...")
+            
+            guard let url = URL(string: "tel://\(contact.phone)") else { return }
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+            
+        }
+        
+        let alertCloseAction = UIAlertAction(title: "Cerrar", style: .cancel, handler: nil)
+        
+        alertController.addAction(accionCall)
+        alertController.addAction(alertCloseAction)
+        
+        self.present(alertController, animated: true, completion: nil)
+        
+        
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        
+        if editingStyle == .delete {
+                
+            let contact = arrayContacts[indexPath.section].contacts[indexPath.row]
+            let alertController = UIAlertController(title: "Eliminar a \(contact.name)",
+                                                    message: "¿Deseas eliminar al contacto?",
+                                                    preferredStyle: .alert)
+            
+            let accionDelete = UIAlertAction(title: "Eliminar", style: .destructive) { _ in
+                
+                self.arrayContacts = self.prepareDataForTableView(contacts: self.persistenceClient.deleteContact(contact: contact))
+                self.contactsTableView.reloadData()
+                
+            }
+                   
+            let alertCloseAction = UIAlertAction(title: "Cerrar", style: .cancel, handler: nil)
+            
+            alertController.addAction(accionDelete)
+            alertController.addAction(alertCloseAction)
+            
+            self.present(alertController, animated: true, completion: nil)
+            
+        }
+        
+    }
+    
 }
 //MARK: UITableViewDataSource
 extension ViewController: UITableViewDataSource {
@@ -122,17 +179,19 @@ extension ViewController: UISearchBarDelegate {
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         
-//        arrayContacts = prepareDataForTableView(contacts: persistenceClient.getContacts())
-//
-//        guard !searchText.isEmpty else {
-//            contactsTableView.reloadData()
-//            return
-//        }
-//
-//        let filterContacts = arrayContacts.filter({  $0.name.lowercased().contains(searchText.lowercased()) })
-//
-//        arrayContacts = filterContacts
-//        contactsTableView.reloadData()
+        arrayContacts = prepareDataForTableView(contacts: persistenceClient.getContacts())
+
+        guard !searchText.isEmpty else {
+            contactsTableView.reloadData()
+            return
+        }
+            
+        let contactsPersistence = persistenceClient.getContacts()
+        
+        let filterContacts = contactsPersistence.filter({  $0.lastName.lowercased().contains( searchText.lowercased()) })
+        
+        arrayContacts = prepareDataForTableView(contacts: filterContacts)
+        contactsTableView.reloadData()
         
     }
     
