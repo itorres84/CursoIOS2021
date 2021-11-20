@@ -9,6 +9,8 @@ import Foundation
 
 protocol ContactPersistenceClient {
     func saveContact(contact: ContactPersistenceClientUserDefault.RequestModel) -> Bool
+    func getContacts() -> [Contact]
+    func deleteContact(contact: Contact) -> [Contact]
 }
 
 class ContactPersistenceClientUserDefault: ContactPersistenceClient {
@@ -55,13 +57,39 @@ class ContactPersistenceClientUserDefault: ContactPersistenceClient {
         
     }
     
+    func deleteContact(contact: Contact) -> [Contact] {
+        
+        let filterContacts = getContacts().filter({ !$0.name.elementsEqual(contact.name) })
+        
+        do {
+            
+            let contactData = try JSONEncoder().encode(filterContacts)
+            userDefault.set(contactData, forKey: keyContactToSave)
+            
+            return getContacts()
+            
+        } catch {
+            
+            print(error.localizedDescription)
+            return getContacts()
+            
+        }
+    
+    }
+    
 }
 
 class ContactPersistenceClientCoreData: ContactPersistenceClient {
     
+    func getContacts() -> [Contact] {
+        return []
+    }
+    
+    func deleteContact(contact: Contact) -> [Contact] {
+        return []
+    }
 
     func saveContact(contact: ContactPersistenceClientUserDefault.RequestModel) -> Bool {
-        
         return false
     }
     
