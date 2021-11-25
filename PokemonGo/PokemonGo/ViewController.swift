@@ -14,10 +14,19 @@ class ViewController: UIViewController {
         table.translatesAutoresizingMaskIntoConstraints = false
         table.dataSource = self
         table.delegate = self
+        table.register(PokemonTableViewCell.self, forCellReuseIdentifier: "cellPokemon")
+        let bundleCell = Bundle(for: LoadTableViewCell.self)
+        table.register(UINib(nibName: "LoadTableViewCell", bundle: bundleCell), forCellReuseIdentifier: "cellLoad")
         return table
     }()
     
     var results: PokemonResponse? = nil
+    
+    var pokemons: [ResultPokemon] = [] {
+        didSet {
+            tablePokemons.reloadData()
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,12 +46,12 @@ class ViewController: UIViewController {
         
     }
     
-    func getPokemons() {
+    func getPokemons(urlString: String = "https://pokeapi.co/api/v2/pokemon") {
         
-        guard let url = URL(string: "https://pokeapi.co/api/v2/pokemon") else {
+        guard let url = URL(string: urlString) else {
             return
         }
-        
+    
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
         
@@ -72,11 +81,14 @@ class ViewController: UIViewController {
         do {
             
             let jsonPetition = try decoder.decode(PokemonResponse.self, from: json)
-            print("Datos deserializados: \(jsonPetition)")
             self.results = jsonPetition
             
+//            DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+//                self.pokemons.append(contentsOf: jsonPetition.results)
+//            }
+            
             DispatchQueue.main.async {
-                self.tablePokemons.reloadData()
+                self.pokemons.append(contentsOf: jsonPetition.results)
             }
             
         } catch {
@@ -86,36 +98,53 @@ class ViewController: UIViewController {
         
     }
 
-
 }
 
 extension ViewController: UITableViewDataSource {
     
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return results?.results.count ?? 0
+        return pokemons.count + 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = UITableViewCell()
-        cell.textLabel?.text = results?.results[indexPath.row].name
+        if indexPath.row < pokemons.count {
         
-        return cell
+            let cell = tableView.dequeueReusableCell(withIdentifier: "cellPokemon", for: indexPath) as! PokemonTableViewCell
+                   cell.configure(pokemon: pokemons[indexPath.row])
+            return cell
+            
+        } else {
+            
+            let cell = tableView.dequeueReusableCell(withIdentifier: "cellLoad", for: indexPath) as! LoadTableViewCell
+            
+            if let nextUrl = results?.next {
+                getPokemons(urlString: nextUrl)
+            }
+            
+            return cell
+        }
         
     }
     
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return "Total de pokemones: \(results?.count ?? 0)"
+    }
     
 }
 
 extension ViewController: UITableViewDelegate {
     
-    
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-            
-        return "Total de pokemones: \(results?.count ?? 0)"
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        
+        if indexPath.row < pokemons.count {
+            return 50
+        } else {
+            return 80
+        }
         
     }
     
+
 }
 
