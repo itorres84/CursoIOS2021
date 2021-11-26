@@ -18,6 +18,7 @@
 		778BFF74273F622500BB47A3 /* ContactPersistenceClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 778BFF73273F622500BB47A3 /* ContactPersistenceClient.swift */; };
 		77C4105C2745F4BF00E60091 /* AlphabetContact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C4105B2745F4BF00E60091 /* AlphabetContact.swift */; };
 		77CFFB21274491B400A38F5C /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77CFFB20274491B400A38F5C /* Contact.swift */; };
+		DBA993422748878400BFA81E /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBA993412748878400BFA81E /* SplashViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		778BFF73273F622500BB47A3 /* ContactPersistenceClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactPersistenceClient.swift; sourceTree = "<group>"; };
 		77C4105B2745F4BF00E60091 /* AlphabetContact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlphabetContact.swift; sourceTree = "<group>"; };
 		77CFFB20274491B400A38F5C /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
+		DBA993412748878400BFA81E /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +79,7 @@
 				77207456273DF9FC00175A3A /* Info.plist */,
 				7720745C273E03D600175A3A /* ContactTableViewCell.swift */,
 				778BFF70273F4BEF00BB47A3 /* AddContactViewController.swift */,
+				DBA993412748878400BFA81E /* SplashViewController.swift */,
 			);
 			path = TableViewExample;
 			sourceTree = "<group>";
@@ -180,6 +183,7 @@
 				778BFF71273F4BEF00BB47A3 /* AddContactViewController.swift in Sources */,
 				7720745D273E03D600175A3A /* ContactTableViewCell.swift in Sources */,
 				7720744D273DF9FA00175A3A /* ViewController.swift in Sources */,
+				DBA993422748878400BFA81E /* SplashViewController.swift in Sources */,
 				778BFF74273F622500BB47A3 /* ContactPersistenceClient.swift in Sources */,
 				77207449273DF9FA00175A3A /* AppDelegate.swift in Sources */,
 				77C4105C2745F4BF00E60091 /* AlphabetContact.swift in Sources */,
