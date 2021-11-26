@@ -82,11 +82,7 @@ class ViewController: UIViewController {
             
             let jsonPetition = try decoder.decode(PokemonResponse.self, from: json)
             self.results = jsonPetition
-            
-//            DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
-//                self.pokemons.append(contentsOf: jsonPetition.results)
-//            }
-            
+                        
             DispatchQueue.main.async {
                 self.pokemons.append(contentsOf: jsonPetition.results)
             }
@@ -99,7 +95,7 @@ class ViewController: UIViewController {
     }
 
 }
-
+//MARK: UITableViewDataSource
 extension ViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -132,7 +128,7 @@ extension ViewController: UITableViewDataSource {
     }
     
 }
-
+//MARK: UITableViewDelegate
 extension ViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -142,6 +138,16 @@ extension ViewController: UITableViewDelegate {
         } else {
             return 80
         }
+        
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let pokemon = pokemons[indexPath.row]
+        
+        let detailViewController = DetailPokemonViewController(pokemon: pokemon)
+        //detailViewController.modalPresentationStyle = .fullScreen
+        present(detailViewController, animated: true, completion: nil)
         
     }
     
