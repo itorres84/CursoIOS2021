@@ -31,6 +31,13 @@ class DetailPokemonViewController: UIViewController {
         return image
     }()
     
+    lazy var lblName: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.text = pokemon.name
+        return label
+    }()
+    
     let pokemon: ResultPokemon
     
     init(pokemon: ResultPokemon) {
@@ -100,6 +107,7 @@ class DetailPokemonViewController: UIViewController {
         view.addSubview(activitiIndicator)
         view.addSubview(lblLoad)
         view.addSubview(imagePokemon)
+        view.addSubview(lblName)
         
         let margin = view.layoutMarginsGuide
         
@@ -113,7 +121,11 @@ class DetailPokemonViewController: UIViewController {
             imagePokemon.topAnchor.constraint(equalTo: margin.topAnchor, constant: 50),
             imagePokemon.centerXAnchor.constraint(equalTo: margin.centerXAnchor),
             imagePokemon.widthAnchor.constraint(equalToConstant: 300),
-            imagePokemon.heightAnchor.constraint(equalToConstant: 300)
+            imagePokemon.heightAnchor.constraint(equalToConstant: 300),
+            
+            lblName.topAnchor.constraint(equalTo: imagePokemon.bottomAnchor),
+            lblName.centerXAnchor.constraint(equalTo: margin.centerXAnchor)
+            
         ])
         
     }
