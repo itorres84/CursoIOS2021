@@ -13,15 +13,18 @@
 		773D46702734C07100B4B652 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 773D466E2734C07100B4B652 /* Main.storyboard */; };
 		773D46722734C07300B4B652 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 773D46712734C07300B4B652 /* Assets.xcassets */; };
 		773D46752734C07300B4B652 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 773D46732734C07300B4B652 /* LaunchScreen.storyboard */; };
+		77AC39B2275710DA00E39131 /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77AC39B1275710DA00E39131 /* NetworkClient.swift */; };
 		77C3B58127361F64008F1786 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C3B58027361F64008F1786 /* SignUpViewController.swift */; };
 		77C3B58327361F98008F1786 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C3B58227361F98008F1786 /* SignInViewController.swift */; };
 		77C3B58527361FB6008F1786 /* RecoveryPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C3B58427361FB6008F1786 /* RecoveryPasswordViewController.swift */; };
 		77C3B58727361FCA008F1786 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C3B58627361FC9008F1786 /* HomeViewController.swift */; };
 		77C3B58927361FE0008F1786 /* FavouritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C3B58827361FE0008F1786 /* FavouritesViewController.swift */; };
 		77CDBBFE273B639A005C6DE8 /* PersistenceClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77CDBBFD273B639A005C6DE8 /* PersistenceClient.swift */; };
+		82C2E4CDA4415A66361B7A9E /* Pods_MultiScreenApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D306C934A6BE56DCD77E9D23 /* Pods_MultiScreenApp.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3F8B7D33A4401067CD7A27A7 /* Pods-MultiScreenApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MultiScreenApp.debug.xcconfig"; path = "Target Support Files/Pods-MultiScreenApp/Pods-MultiScreenApp.debug.xcconfig"; sourceTree = "<group>"; };
 		773D46652734C07100B4B652 /* MultiScreenApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MultiScreenApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		773D46682734C07100B4B652 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		773D466A2734C07100B4B652 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -30,12 +33,15 @@
 		773D46712734C07300B4B652 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		773D46742734C07300B4B652 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		773D46762734C07300B4B652 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		77AC39B1275710DA00E39131 /* NetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
 		77C3B58027361F64008F1786 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		77C3B58227361F98008F1786 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		77C3B58427361FB6008F1786 /* RecoveryPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecoveryPasswordViewController.swift; sourceTree = "<group>"; };
 		77C3B58627361FC9008F1786 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		77C3B58827361FE0008F1786 /* FavouritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesViewController.swift; sourceTree = "<group>"; };
 		77CDBBFD273B639A005C6DE8 /* PersistenceClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceClient.swift; sourceTree = "<group>"; };
+		D306C934A6BE56DCD77E9D23 /* Pods_MultiScreenApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MultiScreenApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D468CCF9A9DBDF7A539F731F /* Pods-MultiScreenApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MultiScreenApp.release.xcconfig"; path = "Target Support Files/Pods-MultiScreenApp/Pods-MultiScreenApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,17 +49,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				82C2E4CDA4415A66361B7A9E /* Pods_MultiScreenApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2681FA0A5D632900263EC051 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3F8B7D33A4401067CD7A27A7 /* Pods-MultiScreenApp.debug.xcconfig */,
+				D468CCF9A9DBDF7A539F731F /* Pods-MultiScreenApp.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		773D465C2734C07000B4B652 = {
 			isa = PBXGroup;
 			children = (
 				773D46672734C07100B4B652 /* MultiScreenApp */,
 				773D46662734C07100B4B652 /* Products */,
+				2681FA0A5D632900263EC051 /* Pods */,
+				C1F7DE3961035F693D0DF0A5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -80,6 +98,14 @@
 			path = MultiScreenApp;
 			sourceTree = "<group>";
 		};
+		77AC39B0275710B000E39131 /* NetworkClient */ = {
+			isa = PBXGroup;
+			children = (
+				77AC39B1275710DA00E39131 /* NetworkClient.swift */,
+			);
+			path = NetworkClient;
+			sourceTree = "<group>";
+		};
 		77C3B57F27361EE9008F1786 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -96,7 +122,7 @@
 		77CDBBF9273B6245005C6DE8 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				77CDBBFC273B6364005C6DE8 /* ServiceClient */,
+				77AC39B0275710B000E39131 /* NetworkClient */,
 				77CDBBFB273B6351005C6DE8 /* PersistenceClient */,
 			);
 			path = Model;
@@ -110,11 +136,12 @@
 			path = PersistenceClient;
 			sourceTree = "<group>";
 		};
-		77CDBBFC273B6364005C6DE8 /* ServiceClient */ = {
+		C1F7DE3961035F693D0DF0A5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D306C934A6BE56DCD77E9D23 /* Pods_MultiScreenApp.framework */,
 			);
-			path = ServiceClient;
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -124,9 +151,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 773D46792734C07300B4B652 /* Build configuration list for PBXNativeTarget "MultiScreenApp" */;
 			buildPhases = (
+				0CD51A6AC257449830636385 /* [CP] Check Pods Manifest.lock */,
 				773D46612734C07000B4B652 /* Sources */,
 				773D46622734C07000B4B652 /* Frameworks */,
 				773D46632734C07000B4B652 /* Resources */,
+				5E07743FC28BFD0E601A8D23 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -183,12 +212,55 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0CD51A6AC257449830636385 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MultiScreenApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5E07743FC28BFD0E601A8D23 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MultiScreenApp/Pods-MultiScreenApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MultiScreenApp/Pods-MultiScreenApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MultiScreenApp/Pods-MultiScreenApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		773D46612734C07000B4B652 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				77C3B58927361FE0008F1786 /* FavouritesViewController.swift in Sources */,
+				77AC39B2275710DA00E39131 /* NetworkClient.swift in Sources */,
 				77CDBBFE273B639A005C6DE8 /* PersistenceClient.swift in Sources */,
 				773D466D2734C07100B4B652 /* OnboardingViewController.swift in Sources */,
 				773D46692734C07100B4B652 /* AppDelegate.swift in Sources */,
@@ -340,6 +412,7 @@
 		};
 		773D467A2734C07300B4B652 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3F8B7D33A4401067CD7A27A7 /* Pods-MultiScreenApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -367,6 +440,7 @@
 		};
 		773D467B2734C07300B4B652 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D468CCF9A9DBDF7A539F731F /* Pods-MultiScreenApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

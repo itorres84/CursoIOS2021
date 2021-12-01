@@ -72,23 +72,27 @@ class SignUpViewController: UIViewController {
         }
         
         if nameIsValid && lastNameValid && emailValid && passwordValid && confirmPasswordValid {
+                        
+            let networkClient = NetworkClient()
             
-            let peristenceClient = PersistenceClient()
-            let saveSucces = peristenceClient.saveUserRegister(name: name,
-                                                               lastName: lastName,
-                                                               email: email,
-                                                               password: password)
-            
-            if saveSucces {
+            networkClient.signUp(model: NetworkClient.SignUpRequestModel(name: name,
+                                                                         lastName: lastName,
+                                                                         email: email,
+                                                                         password: password,
+                                                                         returnSecureToken: true)) { responseData, error in
                 
-                //Mandar llamar al segue 
-                performSegue(withIdentifier: "goToHome", sender: name)
-                
-            } else {
-                showAlert(message: "Ocurrio un error favor de intentarlo de nuevo", title: "Error")
-            }
             
+                if let errorRespose = error {
+                    self.showAlert(message: errorRespose.localizedDescription, title: "Error")
+                } else if let data = responseData {
                     
+                    print(data)
+                    self.performSegue(withIdentifier: "goToHome", sender: name)
+                    
+                }
+                    
+            }
+                                
         } else {
             showAlert(message: "los campos deben tener un formato valido", title: "Error")
         }
