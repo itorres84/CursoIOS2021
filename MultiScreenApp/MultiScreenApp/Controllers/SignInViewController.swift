@@ -56,14 +56,18 @@ class SignInViewController: UIViewController {
         
         if emailValid && passwordValid {
             
-            let persistenceClient = PersistenceClient()
+            let loginService = NetworkClient()
             
-            let name = persistenceClient.login(email: strEmail, password: strPassword)
-            
-            if !name.isEmpty, !name.elementsEqual("Error") {
-                performSegue(withIdentifier: "goToHome", sender: name)
-            } else {
-                showAlert(message: "usuario no valido", title: "Error")
+            loginService.login(model: NetworkClient.SignInRequestModel(email: strEmail,
+                                                                       password: strPassword,
+                                                                       returnSecureToken: true)) { response, error in
+                
+                if let existError = error {
+                    self.showAlert(message: existError.localizedDescription, title: "Error")
+                } else if let existResult = response {
+                    self.performSegue(withIdentifier: "goToHome", sender: existResult.displayName)
+                }
+        
             }
             
         } else {

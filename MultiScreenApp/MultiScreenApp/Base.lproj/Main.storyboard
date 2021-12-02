@@ -265,6 +265,9 @@
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Enviar email"/>
+                                <connections>
+                                    <action selector="sendEmail:" destination="FUA-X5-UKg" eventType="touchUpInside" id="Zqg-ZU-XeR"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="xlT-3o-rd7"/>
@@ -279,6 +282,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Restablecer contraseña" id="agC-xL-Tad"/>
+                    <connections>
+                        <outlet property="txtEmail" destination="ebF-FF-g0o" id="TL3-Yf-qWW"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q1L-gg-tdX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

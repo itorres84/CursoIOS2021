@@ -13,6 +13,7 @@
 		773D46702734C07100B4B652 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 773D466E2734C07100B4B652 /* Main.storyboard */; };
 		773D46722734C07300B4B652 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 773D46712734C07300B4B652 /* Assets.xcassets */; };
 		773D46752734C07300B4B652 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 773D46732734C07300B4B652 /* LaunchScreen.storyboard */; };
+		77601E572758690D0074AE85 /* SendResetPasswordEmail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77601E562758690D0074AE85 /* SendResetPasswordEmail.swift */; };
 		77AC39B2275710DA00E39131 /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77AC39B1275710DA00E39131 /* NetworkClient.swift */; };
 		77C3B58127361F64008F1786 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C3B58027361F64008F1786 /* SignUpViewController.swift */; };
 		77C3B58327361F98008F1786 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C3B58227361F98008F1786 /* SignInViewController.swift */; };
@@ -33,6 +34,7 @@
 		773D46712734C07300B4B652 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		773D46742734C07300B4B652 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		773D46762734C07300B4B652 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		77601E562758690D0074AE85 /* SendResetPasswordEmail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendResetPasswordEmail.swift; sourceTree = "<group>"; };
 		77AC39B1275710DA00E39131 /* NetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
 		77C3B58027361F64008F1786 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		77C3B58227361F98008F1786 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
@@ -102,6 +104,7 @@
 			isa = PBXGroup;
 			children = (
 				77AC39B1275710DA00E39131 /* NetworkClient.swift */,
+				77601E562758690D0074AE85 /* SendResetPasswordEmail.swift */,
 			);
 			path = NetworkClient;
 			sourceTree = "<group>";
@@ -260,6 +263,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				77C3B58927361FE0008F1786 /* FavouritesViewController.swift in Sources */,
+				77601E572758690D0074AE85 /* SendResetPasswordEmail.swift in Sources */,
 				77AC39B2275710DA00E39131 /* NetworkClient.swift in Sources */,
 				77CDBBFE273B639A005C6DE8 /* PersistenceClient.swift in Sources */,
 				773D466D2734C07100B4B652 /* OnboardingViewController.swift in Sources */,

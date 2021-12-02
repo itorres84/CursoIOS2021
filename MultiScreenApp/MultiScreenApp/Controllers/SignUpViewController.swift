@@ -86,8 +86,7 @@ class SignUpViewController: UIViewController {
                     self.showAlert(message: errorRespose.localizedDescription, title: "Error")
                 } else if let data = responseData {
                     
-                    print(data)
-                    self.performSegue(withIdentifier: "goToHome", sender: name)
+                    self.performSegue(withIdentifier: "goToHome", sender: data.displayName)
                     
                 }
                     
