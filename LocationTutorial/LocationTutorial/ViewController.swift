@@ -8,6 +8,7 @@
 import UIKit
 import CoreLocation
 import MapKit
+import Speech
 
 class ViewController: UIViewController {
 
@@ -35,6 +36,7 @@ class ViewController: UIViewController {
         //mapa
         mapView.setRegion(region, animated: true)
         mapView.showsUserLocation = true
+        mapView.delegate = self
         
     }
     
@@ -49,16 +51,86 @@ class ViewController: UIViewController {
         
     }
     
-    
     @IBAction func navigate(_ sender: Any) {
         
-        guard let searchPlace = place else { return }
-        print("iniciar proceso de navegacion...")
+        //1 obtener coordenas del punto origen y punto destino
+        guard let sourceCordinate = locationManager.location?.coordinate,
+              let destionationCoordinate = place?.location?.coordinate else { return }
+       
+        //2 crear un marck a partir de dos coordenadas
+        let sourcePlaceMark = MKPlacemark(coordinate: sourceCordinate)
+        let destinationPlaceMark = MKPlacemark(coordinate: destionationCoordinate)
+       
+        //3 crear un menu item apartir de marks
+        let sourceItem = MKMapItem(placemark: sourcePlaceMark)
+        let destinationItem = MKMapItem(placemark: destinationPlaceMark)
+        
+        
+        let routeRequest = MKDirections.Request()
+        routeRequest.source = sourceItem
+        routeRequest.destination = destinationItem
+        routeRequest.transportType = .automobile
+        
+        let directions = MKDirections(request: routeRequest)
+        
+        directions.calculate { respnse, error in
+        
+            if let existError = error {
+                print(existError.localizedDescription)
+            }
+            
+            guard let response = respnse,  let route = response.routes.first else { return  }
+            
+            self.mapView.addOverlay(route.polyline)
+            self.mapView.setVisibleMapRect(route.polyline.boundingMapRect, edgePadding: UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20), animated: true)
+            self.getRouteSteps(route: route)
+            
+        }
+    
+    }
+    
+    func getRouteSteps(route: MKRoute) {
+        
+        //Quita cualquier monitor de navegacion
+        for moniteredRegion in locationManager.monitoredRegions {
+            locationManager.stopMonitoring(for: moniteredRegion)
+        }
+    
+        //agrega monitor de navegacion
+        for (index, element) in route.steps.enumerated() {
+            let region = CLCircularRegion(center: element.polyline.coordinate, radius: 20, identifier: "\(index)")
+            locationManager.startMonitoring(for: region)
+        }
+        
+        //Comandos de voz
+        let synthesizer = AVSpeechSynthesizer()
+        let instructionOne = route.steps[2]
+        let spetch = AVSpeechUtterance(string: instructionOne.instructions)
+        spetch.voice = AVSpeechSynthesisVoice(language: "es-MX")
+        synthesizer.speak(spetch)
+        
+        //hace zoom para iniciar navagacion
+        let rangeInMeters: Double = 100
+        guard let currentLocation = locationManager.location else { return }
+        let region = MKCoordinateRegion(center: currentLocation.coordinate, latitudinalMeters: rangeInMeters, longitudinalMeters: rangeInMeters)
+        mapView.setRegion(region, animated: true)
         
     }
     
+    
 }
 
+//MARK: MKMapViewDelegate
+extension ViewController: MKMapViewDelegate {
+    
+    func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
+        let renderer = MKPolylineRenderer(overlay: overlay)
+        renderer.strokeColor = .blue
+        return renderer
+    }
+    
+}
+//MARK: SearchViewControllerDelegate
 extension ViewController: SearchViewControllerDelegate {
     
     func navigate(place: CLPlacemark) {
