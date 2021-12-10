@@ -8,13 +8,13 @@
 import UIKit
 import FBSDKLoginKit
 
-class ViewController: UIViewController {
+class LoginViewController: UIViewController {
 
     lazy var btnFaceBook: FBLoginButton = {
         let button = FBLoginButton()
         button.delegate = self
         button.translatesAutoresizingMaskIntoConstraints = false
-        //button.permissions = ["public_profile", "email"]
+        button.permissions = ["public_profile"]
         return button
     }()
     
@@ -46,13 +46,32 @@ class ViewController: UIViewController {
     
 }
 
-extension ViewController: LoginButtonDelegate {
+extension LoginViewController: LoginButtonDelegate {
     
     func loginButton(_ loginButton: FBLoginButton, didCompleteWith result: LoginManagerLoginResult?, error: Error?) {
      
      
         if let token = result?.token, !token.isExpired {
+        
             self.showAlert()
+        
+            let request = FBSDKLoginKit.GraphRequest(graphPath: "me",
+                                                     parameters: ["fields" : "id,first_name,last_name,middle_name,name,name_format,picture,short_name"],
+                                                     tokenString: token.tokenString,
+                                                     version: nil,
+                                                     httpMethod: .get)
+            
+            request.start { connection, response, error in
+                
+                if let result = response as? [String: Any] {
+                        
+                    dump(result)
+                    
+                    
+                }
+            
+            }
+        
         }
         
     }

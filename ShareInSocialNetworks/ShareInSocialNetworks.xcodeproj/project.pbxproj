@@ -7,128 +7,102 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7771C888276198BC0087F146 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7771C887276198BC0087F146 /* AppDelegate.swift */; };
-		7771C88A276198BC0087F146 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7771C889276198BC0087F146 /* SceneDelegate.swift */; };
-		7771C88C276198BC0087F146 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7771C88B276198BC0087F146 /* LoginViewController.swift */; };
-		7771C88F276198BC0087F146 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7771C88D276198BC0087F146 /* Main.storyboard */; };
-		7771C891276198C20087F146 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7771C890276198C20087F146 /* Assets.xcassets */; };
-		7771C894276198C20087F146 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7771C892276198C20087F146 /* LaunchScreen.storyboard */; };
-		F1B6B91A49848A8DEA9E23ED /* Pods_FaceApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CCA46C028FAE5EDA41A44485 /* Pods_FaceApp.framework */; };
+		7771C8A82762E3970087F146 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7771C8A72762E3970087F146 /* AppDelegate.swift */; };
+		7771C8AA2762E3970087F146 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7771C8A92762E3970087F146 /* SceneDelegate.swift */; };
+		7771C8AC2762E3970087F146 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7771C8AB2762E3970087F146 /* ViewController.swift */; };
+		7771C8AF2762E3970087F146 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7771C8AD2762E3970087F146 /* Main.storyboard */; };
+		7771C8B12762E39C0087F146 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7771C8B02762E39C0087F146 /* Assets.xcassets */; };
+		7771C8B42762E39C0087F146 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7771C8B22762E39C0087F146 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		7771C884276198BC0087F146 /* FaceApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FaceApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		7771C887276198BC0087F146 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		7771C889276198BC0087F146 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		7771C88B276198BC0087F146 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		7771C88E276198BC0087F146 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		7771C890276198C20087F146 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		7771C893276198C20087F146 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		7771C895276198C20087F146 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CCA46C028FAE5EDA41A44485 /* Pods_FaceApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FaceApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E0F865EFBED64EC75ED0A2E1 /* Pods-FaceApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FaceApp.release.xcconfig"; path = "Target Support Files/Pods-FaceApp/Pods-FaceApp.release.xcconfig"; sourceTree = "<group>"; };
-		EDAD5C07586CB168495EFE09 /* Pods-FaceApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FaceApp.debug.xcconfig"; path = "Target Support Files/Pods-FaceApp/Pods-FaceApp.debug.xcconfig"; sourceTree = "<group>"; };
+		7771C8A42762E3970087F146 /* ShareInSocialNetworks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShareInSocialNetworks.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7771C8A72762E3970087F146 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		7771C8A92762E3970087F146 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		7771C8AB2762E3970087F146 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		7771C8AE2762E3970087F146 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		7771C8B02762E39C0087F146 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		7771C8B32762E39C0087F146 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		7771C8B52762E39C0087F146 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		7771C881276198BC0087F146 /* Frameworks */ = {
+		7771C8A12762E3970087F146 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F1B6B91A49848A8DEA9E23ED /* Pods_FaceApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		76CAF1CBBCF9FF4D2CDD19E8 /* Frameworks */ = {
+		7771C89B2762E3970087F146 = {
 			isa = PBXGroup;
 			children = (
-				CCA46C028FAE5EDA41A44485 /* Pods_FaceApp.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		7771C87B276198BC0087F146 = {
-			isa = PBXGroup;
-			children = (
-				7771C886276198BC0087F146 /* FaceApp */,
-				7771C885276198BC0087F146 /* Products */,
-				B487A9B5496619CA71897939 /* Pods */,
-				76CAF1CBBCF9FF4D2CDD19E8 /* Frameworks */,
+				7771C8A62762E3970087F146 /* ShareInSocialNetworks */,
+				7771C8A52762E3970087F146 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		7771C885276198BC0087F146 /* Products */ = {
+		7771C8A52762E3970087F146 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				7771C884276198BC0087F146 /* FaceApp.app */,
+				7771C8A42762E3970087F146 /* ShareInSocialNetworks.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		7771C886276198BC0087F146 /* FaceApp */ = {
+		7771C8A62762E3970087F146 /* ShareInSocialNetworks */ = {
 			isa = PBXGroup;
 			children = (
-				7771C887276198BC0087F146 /* AppDelegate.swift */,
-				7771C889276198BC0087F146 /* SceneDelegate.swift */,
-				7771C88B276198BC0087F146 /* LoginViewController.swift */,
-				7771C88D276198BC0087F146 /* Main.storyboard */,
-				7771C890276198C20087F146 /* Assets.xcassets */,
-				7771C892276198C20087F146 /* LaunchScreen.storyboard */,
-				7771C895276198C20087F146 /* Info.plist */,
+				7771C8A72762E3970087F146 /* AppDelegate.swift */,
+				7771C8A92762E3970087F146 /* SceneDelegate.swift */,
+				7771C8AB2762E3970087F146 /* ViewController.swift */,
+				7771C8AD2762E3970087F146 /* Main.storyboard */,
+				7771C8B02762E39C0087F146 /* Assets.xcassets */,
+				7771C8B22762E39C0087F146 /* LaunchScreen.storyboard */,
+				7771C8B52762E39C0087F146 /* Info.plist */,
 			);
-			path = FaceApp;
-			sourceTree = "<group>";
-		};
-		B487A9B5496619CA71897939 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				EDAD5C07586CB168495EFE09 /* Pods-FaceApp.debug.xcconfig */,
-				E0F865EFBED64EC75ED0A2E1 /* Pods-FaceApp.release.xcconfig */,
-			);
-			path = Pods;
+			path = ShareInSocialNetworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		7771C883276198BC0087F146 /* FaceApp */ = {
+		7771C8A32762E3970087F146 /* ShareInSocialNetworks */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 7771C898276198C20087F146 /* Build configuration list for PBXNativeTarget "FaceApp" */;
+			buildConfigurationList = 7771C8B82762E39C0087F146 /* Build configuration list for PBXNativeTarget "ShareInSocialNetworks" */;
 			buildPhases = (
-				5AB726978D2367513A4C519B /* [CP] Check Pods Manifest.lock */,
-				7771C880276198BC0087F146 /* Sources */,
-				7771C881276198BC0087F146 /* Frameworks */,
-				7771C882276198BC0087F146 /* Resources */,
-				80D7CF6A8A347AC5A5DB8F8F /* [CP] Embed Pods Frameworks */,
+				7771C8A02762E3970087F146 /* Sources */,
+				7771C8A12762E3970087F146 /* Frameworks */,
+				7771C8A22762E3970087F146 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = FaceApp;
-			productName = FaceApp;
-			productReference = 7771C884276198BC0087F146 /* FaceApp.app */;
+			name = ShareInSocialNetworks;
+			productName = ShareInSocialNetworks;
+			productReference = 7771C8A42762E3970087F146 /* ShareInSocialNetworks.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		7771C87C276198BC0087F146 /* Project object */ = {
+		7771C89C2762E3970087F146 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1300;
 				LastUpgradeCheck = 1300;
 				TargetAttributes = {
-					7771C883276198BC0087F146 = {
+					7771C8A32762E3970087F146 = {
 						CreatedOnToolsVersion = 13.0;
 					};
 				};
 			};
-			buildConfigurationList = 7771C87F276198BC0087F146 /* Build configuration list for PBXProject "FaceApp" */;
+			buildConfigurationList = 7771C89F2762E3970087F146 /* Build configuration list for PBXProject "ShareInSocialNetworks" */;
 			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -136,97 +110,55 @@
 				en,
 				Base,
 			);
-			mainGroup = 7771C87B276198BC0087F146;
-			productRefGroup = 7771C885276198BC0087F146 /* Products */;
+			mainGroup = 7771C89B2762E3970087F146;
+			productRefGroup = 7771C8A52762E3970087F146 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				7771C883276198BC0087F146 /* FaceApp */,
+				7771C8A32762E3970087F146 /* ShareInSocialNetworks */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		7771C882276198BC0087F146 /* Resources */ = {
+		7771C8A22762E3970087F146 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7771C894276198C20087F146 /* LaunchScreen.storyboard in Resources */,
-				7771C891276198C20087F146 /* Assets.xcassets in Resources */,
-				7771C88F276198BC0087F146 /* Main.storyboard in Resources */,
+				7771C8B42762E39C0087F146 /* LaunchScreen.storyboard in Resources */,
+				7771C8B12762E39C0087F146 /* Assets.xcassets in Resources */,
+				7771C8AF2762E3970087F146 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		5AB726978D2367513A4C519B /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-FaceApp-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		80D7CF6A8A347AC5A5DB8F8F /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-FaceApp/Pods-FaceApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-FaceApp/Pods-FaceApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FaceApp/Pods-FaceApp-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
-		7771C880276198BC0087F146 /* Sources */ = {
+		7771C8A02762E3970087F146 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7771C88C276198BC0087F146 /* LoginViewController.swift in Sources */,
-				7771C888276198BC0087F146 /* AppDelegate.swift in Sources */,
-				7771C88A276198BC0087F146 /* SceneDelegate.swift in Sources */,
+				7771C8AC2762E3970087F146 /* ViewController.swift in Sources */,
+				7771C8A82762E3970087F146 /* AppDelegate.swift in Sources */,
+				7771C8AA2762E3970087F146 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		7771C88D276198BC0087F146 /* Main.storyboard */ = {
+		7771C8AD2762E3970087F146 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				7771C88E276198BC0087F146 /* Base */,
+				7771C8AE2762E3970087F146 /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		7771C892276198C20087F146 /* LaunchScreen.storyboard */ = {
+		7771C8B22762E39C0087F146 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				7771C893276198C20087F146 /* Base */,
+				7771C8B32762E39C0087F146 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -234,7 +166,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		7771C896276198C20087F146 /* Debug */ = {
+		7771C8B62762E39C0087F146 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -295,7 +227,7 @@
 			};
 			name = Debug;
 		};
-		7771C897276198C20087F146 /* Release */ = {
+		7771C8B72762E39C0087F146 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -350,9 +282,8 @@
 			};
 			name = Release;
 		};
-		7771C899276198C20087F146 /* Debug */ = {
+		7771C8B92762E39C0087F146 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = EDAD5C07586CB168495EFE09 /* Pods-FaceApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -360,7 +291,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 5N3Q47BW2U;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = FaceApp/Info.plist;
+				INFOPLIST_FILE = ShareInSocialNetworks/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -371,7 +302,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.ita.FaceApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ita.ShareInSocialNetworks;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -379,9 +310,8 @@
 			};
 			name = Debug;
 		};
-		7771C89A276198C20087F146 /* Release */ = {
+		7771C8BA2762E39C0087F146 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E0F865EFBED64EC75ED0A2E1 /* Pods-FaceApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -389,7 +319,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 5N3Q47BW2U;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = FaceApp/Info.plist;
+				INFOPLIST_FILE = ShareInSocialNetworks/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -400,7 +330,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.ita.FaceApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ita.ShareInSocialNetworks;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -411,25 +341,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		7771C87F276198BC0087F146 /* Build configuration list for PBXProject "FaceApp" */ = {
+		7771C89F2762E3970087F146 /* Build configuration list for PBXProject "ShareInSocialNetworks" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				7771C896276198C20087F146 /* Debug */,
-				7771C897276198C20087F146 /* Release */,
+				7771C8B62762E39C0087F146 /* Debug */,
+				7771C8B72762E39C0087F146 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		7771C898276198C20087F146 /* Build configuration list for PBXNativeTarget "FaceApp" */ = {
+		7771C8B82762E39C0087F146 /* Build configuration list for PBXNativeTarget "ShareInSocialNetworks" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				7771C899276198C20087F146 /* Debug */,
-				7771C89A276198C20087F146 /* Release */,
+				7771C8B92762E39C0087F146 /* Debug */,
+				7771C8BA2762E39C0087F146 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 7771C87C276198BC0087F146 /* Project object */;
+	rootObject = 7771C89C2762E3970087F146 /* Project object */;
 }
