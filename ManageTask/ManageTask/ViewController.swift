@@ -98,14 +98,14 @@ class ViewController: UIViewController {
     
     }
     
-    func updateTask(nameTask: String) {
+    func updateTask(oldNameTask: String, nameTask: String) {
         
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let managedContext = appDelegate.persistentContainer.viewContext
         
         let fechRequest: NSFetchRequest<Task> = Task.fetchRequest()
         fechRequest.predicate = NSPredicate(
-            format: "name LIKE %@", nameTask
+            format: "name LIKE %@", oldNameTask.trimmingCharacters(in: .whitespacesAndNewlines)
         )
         
         do {
@@ -115,7 +115,7 @@ class ViewController: UIViewController {
             if let firtObject = objects.first {
                 firtObject.setValue(nameTask, forKey: "name")
             }
-            
+                
             try managedContext.save()
             
             self.getTaks()
@@ -200,7 +200,7 @@ extension ViewController: UITableViewDelegate {
             guard let textField = alert.textFields?.first,
             let textSave = textField.text else { return }
             
-            self.saveTask(nameTask: textSave)
+            self.updateTask(oldNameTask: name, nameTask: textSave)
 
         }
             
