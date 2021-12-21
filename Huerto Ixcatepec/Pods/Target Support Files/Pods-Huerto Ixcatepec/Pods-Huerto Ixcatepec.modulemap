@@ -1,0 +1,6 @@
+framework module Pods_Huerto_Ixcatepec {
+  umbrella header "Pods-Huerto Ixcatepec-umbrella.h"
+
+  export *
+  module * { export * }
+}
